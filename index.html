@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Author" content="Kostas Konstantakis">
+	<meta name="description" content="A personal site about Kostas' guitar collection: electric/acoustic guitars, and a bass, along with stories behind each instrument.">
+	<meta name="keywords" lang="en-us" content="web programming, HTML, CSS, Javascript, website, webpage, guitars, web, web development">
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="stylesheet" href="css/output.css">
+	<title id="page-title">Kostas' Guitar Collection</title>
+	<link rel="icon" type="image/x-icon" href="css/media/favicon.png">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
+	<link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide-core.min.css">
+	<link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css">
+	<script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+</head>
+
+<body class="text-[var(--color-text)] bg-[var(--bg-primary)] bg-[url('./media/partiture.jpg')] overflow-x-hidden flex flex-col min-h-full items-stretch text-base transition-colors duration-300">
+
+	<a href="#main-content"
+	   class="absolute -top-12 left-2 px-4 py-2 bg-[#222] text-white font-bold no-underline z-[100] transition-[top] duration-200 focus:top-2 focus:outline focus:outline-[3px] focus:outline-current focus:outline-offset-2">
+	  Skip to main content
+	</a>
+  
+	<button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+	   class="fixed top-4 right-4 bg-[var(--color-footer-bg)] text-[var(--color-footer-text)] border-2 border-[var(--color-outline)] rounded-full w-10 h-10 text-xl cursor-pointer z-[99] flex items-center justify-center transition-all duration-300 hover:scale-110 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+	  🌙
+	</button>
+  
+	<header class="text-center [text-decoration:overline_underline]">
+	  <h1>
+		<img class="favicon-rotating inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
+		<span id="page-header-text">Enjoy Kostas' Guitar Collection!</span>
+		<img class="favicon-rotating inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
+	  </h1>
+	</header>
+  
+	<main id="main-content" class="flex-1 pb-24">
+  
+	  <p class="synopsis text-center text-[18px] font-[Impact] mx-[100px]">
+		Hello, everyone! My name is Kostas.<br>
+		Welcome to a demo webpage about my guitar collection.<br>
+		I have been playing guitar for over 15 years now, since September 2009.<br>
+		Essentially, more than half my life, given that I'm <span id="age" aria-live="polite"></span> years old.<br>
+		What about you? Do you play guitar, too?<br>
+		Come on, let's jam!
+	  </p>
+  
+	  <div class="controls flex flex-wrap justify-center items-center gap-6 my-[15px]">
+  
+		<div class="language-control text-center">
+		  <label for="language-filter" class="mr-2"><strong>Language:</strong></label>
+		  <select id="language-filter"
+			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="en" selected>English</option>
+			<option value="el">Ελληνικά</option>
+			<option value="ru">Русский</option>
+		  </select>
+		  <span class="sr-only" id="language-desc">Choose the language for the website content.</span>
+		</div>
+  
+		<div class="search-control text-center">
+		  <input type="text" id="search-filter" placeholder="Search guitars..."
+			aria-label="Search guitars by name or model"
+			class="px-3 py-1.5 text-base bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded min-w-[200px] placeholder:text-[var(--color-text)] placeholder:opacity-60 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+		</div>
+  
+		<div class="sort-control text-center">
+		  <label for="sort-filter" class="mr-2"><strong>Sort:</strong></label>
+		  <select id="sort-filter" aria-label="Sort guitars"
+			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="default">Default</option>
+			<option value="newest">Newest First</option>
+			<option value="type">By Type</option>
+			<option value="name">A-Z</option>
+		  </select>
+		</div>
+  
+		<div class="orientation-control text-center">
+		  <label for="orientation-filter" class="mr-2"><strong>Guitar layout orientation:</strong></label>
+		  <select id="orientation-filter"
+			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="vertical" selected>Vertical</option>
+			<option value="horizontal">Horizontal</option>
+			<option value="slideshow">Slideshow</option>
+		  </select>
+		  <span class="sr-only" id="orientation-desc">Choose how guitar images are displayed.</span>
+		</div>
+  
+		<div class="type-filter-control text-center">
+		  <label for="type-filter" class="mr-2"><strong>Type:</strong></label>
+		  <select id="type-filter" aria-label="Filter by instrument type"
+			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="all">All</option>
+			<option value="electric">Electric Guitar</option>
+			<option value="bass">Bass</option>
+			<option value="acoustic">Acoustic</option>
+			<option value="signature">Signature</option>
+			<option value="baritone">Baritone</option>
+			<option value="7string">7 string</option>
+		  </select>
+		</div>
+	  </div>
+  
+	  <div id="slideshow-counter" class="slideshow-counter hidden absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded text-sm font-bold z-[11]" aria-live="polite"></div>
+  
+	  <section class="guitars-section grid gap-[5px] grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full overflow-hidden orientation-vertical"
+		id="guitars-section" aria-label="Guitar gallery">
+	  </section>
+  
+	  <div id="lightbox" class="lightbox fixed inset-0 z-[1000] bg-black/85 flex items-center justify-center p-8 box-border" role="dialog" aria-modal="true" aria-label="Enlarged image" aria-describedby="lightbox-caption" hidden>
+		<button type="button" class="lightbox__close absolute top-4 right-4 bg-[var(--color-footer-bg)] text-white border-2 border-white w-10 h-10 text-2xl leading-none cursor-pointer rounded hover:bg-white hover:text-[var(--color-footer-bg)] focus-visible:outline-none" aria-label="Close">&times;</button>
+		<div class="lightbox__inner max-w-[90vw] max-h-[85vh] flex flex-col items-center gap-4">
+		  <img class="lightbox__img max-w-full max-h-[75vh] w-auto h-auto object-contain transition-transform duration-300" src="" alt="">
+		  <p id="lightbox-caption" class="lightbox__caption text-white text-center m-0 text-base"></p>
+		</div>
+	  </div>
+  
+	</main>
+  
+	<footer class="w-full bg-[var(--color-footer-bg)] text-[var(--color-footer-text)] flex flex-col flex-wrap self-end items-center justify-center font-[Arial,Helvetica,sans-serif] text-sm leading-relaxed mb-0 pb-0">
+	  <div class="name-year mt-2.5 mb-[15px] hover:text-[var(--color-accent-light)] hover:[text-decoration:underline_overline]">
+		<img class="inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
+			<a href="" id="footer-text" class="text-[var(--color-footer-text)] no-underline mb-2.5"></a>
+		<img class="inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
+	  </div>
+	  <nav class="footer-links flex flex-row items-center justify-center gap-5 pb-2.5" aria-label="Social media links">
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
+		  id="github" href="https://github.com/kostaskonstantakis/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+		  <i class="fa" aria-hidden="true">&#xf09b;</i>
+		</a>
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
+		  id="linkedin" href="https://www.linkedin.com/in/kostas-k-8841961a2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+		  <i class="fa" aria-hidden="true">&#xf08c;</i>
+		</a>
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
+		  id="e-mail" href="mailto:kostaskonstantakis6@gmail.com" aria-label="Send email">
+		  <i class="fa" aria-hidden="true">&#xf0e0;</i>
+		</a>
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
+		  id="bitbucket" href="https://bitbucket.org/projects_26/workspace/repositories" target="_blank" rel="noopener noreferrer" aria-label="Bitbucket profile"> <!-- class="w-[1em] h-[1em]" -->
+          <svg aria-hidden="true" class="w-[1em] h-[1em]" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 25.8 511.9 460.3"><path d="M202.5 330.9h106.9l25.8-150.6H174.1z" style="fill:none"/><path d="M16.6 25.8C7.6 25.7.1 32.9 0 42c0 1 .1 1.9.2 2.8l69.6 422.7c1.8 10.7 11 18.5 21.8 18.6h334.1c8.1.1 15.1-5.8 16.4-13.8l69.6-427.5c1.4-8.9-4.6-17.4-13.6-18.8-.9-.2-1.9-.2-2.8-.2zm293.2 305.5H203.2l-28.9-150.8h161.3z" style="fill:#fff"/><linearGradient id="a" x1="-703.576" x2="-703.703" y1="796.173" y2="796.039" gradientTransform="matrix(1996.6343 0 0 -1480.3047 1405309.125 1178801.625)" gradientUnits="userSpaceOnUse"><stop offset=".18" style="stop-color:#fff"/><stop offset="1" style="stop-color:#fff"/></linearGradient><path d="M489.2 180.3H335.4L309.6 331H203L77.2 480.3c4 3.4 9.1 5.4 14.3 5.4h333.9c8.1.1 15.1-5.8 16.4-13.8z" style="fill:url(#a)"/></svg>		</a>
+	  </nav>
+	  <div class="disclaimer text-center px-4">
+		<strong><i>Disclaimer:<br>That's a mere, simple demo website, made just for fun! It's not intended to be used as a real, commercial website.<br>I'm in no way, shape or form affiliated with any of the brands displayed or mentioned in this website.</i></strong>
+	  </div>
+	</footer>
+  
+	<script src="js/data.js"></script>
+	<script src="js/translations.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/features.js"></script>
+	<script src="js/audio.js"></script>
+  </body>
+</html>
