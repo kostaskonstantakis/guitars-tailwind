@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en" data-theme="light"><head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="Author" content="Kostas Konstantakis">
 	<meta name="description" content="A personal site about Kostas' guitar collection: electric/acoustic guitars, and a bass, along with stories behind each instrument.">
 	<meta name="keywords" lang="en-us" content="web programming, HTML, CSS, Javascript, website, webpage, guitars, web, web development">
-	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
 	<link rel="stylesheet" href="css/output.css">
-	<title id="page-title">Kostas' Guitar Collection</title>
+	<title id="page-title">Kostas' Guitars – My guitar collection</title>
 	<link rel="icon" type="image/x-icon" href="css/media/favicon.png">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
@@ -21,15 +18,11 @@
 
 <body class="text-[var(--color-text)] bg-[var(--bg-primary)] bg-[url('./media/partiture.jpg')] overflow-x-hidden flex flex-col min-h-full items-stretch text-base transition-colors duration-300">
 
-	<a href="#main-content"
-	   class="absolute -top-12 left-2 px-4 py-2 bg-[#222] text-white font-bold no-underline z-[100] transition-[top] duration-200 focus:top-2 focus:outline focus:outline-[3px] focus:outline-current focus:outline-offset-2">
+	<a href="#main-content" class="absolute -top-12 left-2 px-4 py-2 bg-[#222] text-white font-bold no-underline z-[100] transition-[top] duration-200 focus:top-2 focus:outline focus:outline-[3px] focus:outline-current focus:outline-offset-2">
 	  Skip to main content
 	</a>
   
-	<button id="dark-mode-toggle" aria-label="Toggle dark mode" aria-pressed="false"
-	   class="fixed top-4 right-4 bg-[var(--color-footer-bg)] text-[var(--color-footer-text)] border-2 border-[var(--color-outline)] rounded-full w-10 h-10 text-xl cursor-pointer z-[99] flex items-center justify-center transition-all duration-300 hover:scale-110 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
-	  🌙
-	</button>
+	<button id="dark-mode-toggle" aria-label="Switch to dark mode" aria-pressed="false" class="fixed top-4 right-4 bg-[var(--color-footer-bg)] text-[var(--color-footer-text)] border-2 border-[var(--color-outline)] rounded-full w-10 h-10 text-xl cursor-pointer z-[99] flex items-center justify-center transition-all duration-300 hover:scale-110 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">☀️</button>
   
 	<header class="text-center [text-decoration:overline_underline]">
 	  <h1>
@@ -41,22 +34,14 @@
   
 	<main id="main-content" class="flex-1 pb-24">
   
-	  <p class="synopsis text-center text-[18px] font-[Impact] mx-[100px]">
-		Hello, everyone! My name is Kostas.<br>
-		Welcome to a demo webpage about my guitar collection.<br>
-		I have been playing guitar for over 15 years now, since September 2009.<br>
-		Essentially, more than half my life, given that I'm <span id="age" aria-live="polite"></span> years old.<br>
-		What about you? Do you play guitar, too?<br>
-		Come on, let's jam!
-	  </p>
+	  <p class="synopsis text-center text-[18px] font-[Impact] mx-[100px]">Hello, everyone! My name is Kostas.<br>Welcome to a demo webpage about my guitar collection.<br>I have been playing guitar for over 15 years now, since September 2009.<br>Essentially, more than half my life, given that I'm <span id="age" aria-live="polite">31</span> years old.<br>What about you? Do you play guitar, too?<br>Come on, let's jam!</p>
   
 	  <div class="controls flex flex-wrap justify-center items-center gap-6 my-[15px]">
   
 		<div class="language-control text-center">
 		  <label for="language-filter" class="mr-2"><strong>Language:</strong></label>
-		  <select id="language-filter"
-			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
-			<option value="en" selected>English</option>
+		  <select id="language-filter" class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="en" selected="">English</option>
 			<option value="el">Ελληνικά</option>
 			<option value="ru">Русский</option>
 		  </select>
@@ -64,15 +49,12 @@
 		</div>
   
 		<div class="search-control text-center">
-		  <input type="text" id="search-filter" placeholder="Search guitars..."
-			aria-label="Search guitars by name or model"
-			class="px-3 py-1.5 text-base bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded min-w-[200px] placeholder:text-[var(--color-text)] placeholder:opacity-60 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+		  <input type="text" id="search-filter" placeholder="Search guitars..." aria-label="Search guitars by name or model" class="px-3 py-1.5 text-base bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded min-w-[200px] placeholder:text-[var(--color-text)] placeholder:opacity-60 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
 		</div>
   
 		<div class="sort-control text-center">
 		  <label for="sort-filter" class="mr-2"><strong>Sort:</strong></label>
-		  <select id="sort-filter" aria-label="Sort guitars"
-			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+		  <select id="sort-filter" aria-label="Sort guitars" class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
 			<option value="default">Default</option>
 			<option value="newest">Newest First</option>
 			<option value="type">By Type</option>
@@ -82,9 +64,8 @@
   
 		<div class="orientation-control text-center">
 		  <label for="orientation-filter" class="mr-2"><strong>Guitar layout orientation:</strong></label>
-		  <select id="orientation-filter"
-			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
-			<option value="vertical" selected>Vertical</option>
+		  <select id="orientation-filter" class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+			<option value="vertical" selected="">Vertical</option>
 			<option value="horizontal">Horizontal</option>
 			<option value="slideshow">Slideshow</option>
 		  </select>
@@ -93,8 +74,7 @@
   
 		<div class="type-filter-control text-center">
 		  <label for="type-filter" class="mr-2"><strong>Type:</strong></label>
-		  <select id="type-filter" aria-label="Filter by instrument type"
-			class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
+		  <select id="type-filter" aria-label="Filter by instrument type" class="px-3 py-1.5 text-base cursor-pointer bg-[var(--bg-primary)] text-[var(--color-text)] border border-[var(--color-outline)] rounded focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2">
 			<option value="all">All</option>
 			<option value="electric">Electric Guitar</option>
 			<option value="bass">Bass</option>
@@ -108,12 +88,10 @@
   
 	  <div id="slideshow-counter" class="slideshow-counter hidden absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded text-sm font-bold z-[11]" aria-live="polite"></div>
   
-	  <section class="guitars-section grid gap-[5px] grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full overflow-hidden orientation-vertical"
-		id="guitars-section" aria-label="Guitar gallery">
-	  </section>
+	  <section class="guitars-section grid gap-[5px] grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full overflow-hidden orientation-vertical" id="guitars-section" aria-label="Guitar gallery"><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric" data-description="Schecter Blackjack ATX C1. My fave guitar of all time! I got this second hand in 2016." aria-label="Schecter Blackjack ATX C1. My fave guitar of all time! I got this second hand in 2016."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Schecter Blackjack ATX C1. My fave guitar of all time! I got this second hand in 2016."><img src="css/media/schecter-blackjack.png" alt="Schecter Blackjack ATX C1 My fave guitar! I got this second hand in 2016." width="400" height="533" data-guitar-index="0" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric 7string" data-description="Solar A2.7 TBR Trans Blood Red Matte. I got this one also second hand in 2019." aria-label="Solar A2.7 TBR Trans Blood Red Matte. I got this one also second hand in 2019."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Solar A2.7 TBR Trans Blood Red Matte. I got this one also second hand in 2019."><img src="css/media/solar-a2-7-red-matte.png" alt="Solar A2.7 TBR Trans Blood Red Matte. I got this one also second hand in 2019." width="400" height="533" data-guitar-index="1" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric signature" data-description="Kirk Hammett Washburn Student Series. My first guitar ever, back in 2009! The literal OG!" aria-label="Kirk Hammett Washburn Student Series. My first guitar ever, back in 2009! The literal OG!"><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Kirk Hammett Washburn Student Series. My first guitar ever, back in 2009! The literal OG!"><img src="css/media/kirk-hammett-washburn.png" alt="Kirk Hammett Washburn Student Series. My first guitar ever, back in 2009!" width="400" height="533" data-guitar-index="2" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="bass" data-description="Cort B4 Element Bass. I bought it in 2022 from Kagmakis Guitars in Erxarheia." aria-label="Cort B4 Element Bass. I bought it in 2022 from Kagmakis Guitars in Erxarheia."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Cort B4 Element Bass. I bought it in 2022 from Kagmakis Guitars in Erxarheia."><img src="css/media/cort-b4-element.png" alt="Cort B4 Element Bass. I bought this in 2022 from Kagmakis Guitars in Erxarheia." width="400" height="533" data-guitar-index="3" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric" data-description="Fender Squier Telemaster. I got this from Stolas Store in Kallithea, in 2022." aria-label="Fender Squier Telemaster. I got this from Stolas Store in Kallithea, in 2022."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Fender Squier Telemaster. I got this from Stolas Store in Kallithea, in 2022."><img src="css/media/squier-telecaster.png" alt="Fender Squier Telemaster. I got this from Stolas Store in Kallithea, in 2022." width="400" height="533" data-guitar-index="4" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric" data-description="Fender Squier Stagemaster. Another happy purchase from Kagmakis Guitars, also in 2022." aria-label="Fender Squier Stagemaster. Another happy purchase from Kagmakis Guitars, also in 2022."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Fender Squier Stagemaster. Another happy purchase from Kagmakis Guitars, also in 2022."><img src="css/media/squier-stagemaster.png" alt="Fender Squier Stagemaster. Another happy purchase from Kagmakis Guitars, also in 2022." width="400" height="533" data-guitar-index="5" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="acoustic" data-description="Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021." aria-label="Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021."><img src="css/media/yamaha-acoustic.png" alt="Yamaha APX 600 Natural acoustic. I ordered this one along with the Misha Mansoor signature guitar from Thomann, in 2021." width="400" height="533" data-guitar-index="6" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric baritone" data-description="Harley Benton JA123 baritone. I once again purchased this one from Thomann, during the 2025 Christmas holidays." aria-label="Harley Benton JA123 baritone. I once again purchased this one from Thomann, during the 2025 Christmas holidays."><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Harley Benton JA123 baritone. I once again purchased this one from Thomann, during the 2025 Christmas holidays."><img src="css/media/harley-benton-ja123-baritone.png" alt="Harley Benton JA123 baritone. I once again purchased this one from Thomann, during the 2025 Christmas holidays." width="400" height="533" data-guitar-index="7" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="electric signature" data-description="Jackson Pro Misha Mansoor Juggernaut HT6QM CB, since 2021. I love Misha's bands, Periphery &amp; Haunted Shores!" aria-label="Jackson Pro Misha Mansoor Juggernaut HT6QM CB, since 2021. I love Misha's bands, Periphery &amp; Haunted Shores!"><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Jackson Pro Misha Mansoor Juggernaut HT6QM CB, since 2021. I love Misha's bands, Periphery &amp; Haunted Shores!"><img src="css/media/jackson-misha-mansoor-juggernaut.png" alt="Jackson Pro Misha Mansoor Juggernaut HT6QM CB, since 2021. I love Misha's bands, Periphery &amp; Haunted Shores!" width="400" height="533" data-guitar-index="8" class="block w-full h-full object-contain"></div></div><div class="guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 h-[600px] w-[400px]" tabindex="0" role="group" data-type="ukulele" data-description="Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing some different music styles!" aria-label="Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing some different music styles!"><div class="guitar-section__img-wrap overflow-hidden absolute inset-0 pointer-events-none" data-description="Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing some different music styles!"><img src="css/media/mahalo_ukulele_purple.png" alt="Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing." width="400" height="533" data-guitar-index="9" class="block w-full h-full object-contain"></div></div></section>
   
-	  <div id="lightbox" class="lightbox fixed inset-0 z-[1000] bg-black/85 flex items-center justify-center p-8 box-border" role="dialog" aria-modal="true" aria-label="Enlarged image" aria-describedby="lightbox-caption" hidden>
-		<button type="button" class="lightbox__close absolute top-4 right-4 bg-[var(--color-footer-bg)] text-white border-2 border-white w-10 h-10 text-2xl leading-none cursor-pointer rounded hover:bg-white hover:text-[var(--color-footer-bg)] focus-visible:outline-none" aria-label="Close">&times;</button>
+	  <div id="lightbox" class="lightbox fixed inset-0 z-[1000] bg-black/85 flex items-center justify-center p-8 box-border" role="dialog" aria-modal="true" aria-label="Enlarged image" aria-describedby="lightbox-caption" hidden="">
+		<button type="button" class="lightbox__close absolute top-4 right-4 bg-[var(--color-footer-bg)] text-white border-2 border-white w-10 h-10 text-2xl leading-none cursor-pointer rounded hover:bg-white hover:text-[var(--color-footer-bg)] focus-visible:outline-none" aria-label="Close">×</button>
 		<div class="lightbox__inner max-w-[90vw] max-h-[85vh] flex flex-col items-center gap-4">
 		  <img class="lightbox__img max-w-full max-h-[75vh] w-auto h-auto object-contain transition-transform duration-300" src="" alt="">
 		  <p id="lightbox-caption" class="lightbox__caption text-white text-center m-0 text-base"></p>
@@ -125,22 +103,12 @@
 	<footer class="w-full bg-[var(--color-footer-bg)] text-[var(--color-footer-text)] flex flex-col flex-wrap self-end items-center justify-center font-[Arial,Helvetica,sans-serif] text-sm leading-relaxed mb-0 pb-0">
 	  <div class="name-year mt-2.5 mb-[15px] hover:text-[var(--color-accent-light)] hover:[text-decoration:underline_overline]">
 		<img class="inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
-			<a href="" id="footer-text" class="text-[var(--color-footer-text)] no-underline mb-2.5"></a>
+			<a href="" id="footer-text" class="text-[var(--color-footer-text)] no-underline mb-2.5">Kostas Konstantakis © <span id="year"></span></a>
 		<img class="inline-block w-12 h-12 align-middle" src="css/media/favicon.png" alt="favicon" aria-hidden="true">
 	  </div>
 	  <nav class="footer-links flex flex-row items-center justify-center gap-5 pb-2.5" aria-label="Social media links">
-		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
-		  id="github" href="https://github.com/kostaskonstantakis/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-		  <svg
-	            class="footer-icon-svg"
-	            width="0.9em"
-	            height="0.9em"
-	            fill="#fff"
-	            viewBox="0 0 48 48"
-	            id="Layer_2"
-	            data-name="Layer 2"
-	            xmlns="http://www.w3.org/2000/svg"
-	        >
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline" id="github" href="https://github.com/kostaskonstantakis/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+		  <svg class="footer-icon-svg" width="0.9em" height="0.9em" fill="#fff" viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <style>
                 .cls-1 {
@@ -152,111 +120,36 @@
 	                    }
               </style>
             </defs>
-            <path
-	                class="cls-1"
-	                d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"
-	            />
+            <path class="cls-1" d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"></path>
           </svg>
 		</a>
-		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
-		  id="linkedin" href="https://www.linkedin.com/in/kostas-k-8841961a2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-		  <svg
-	            class="footer-icon-svg"
-	            width="0.9em"
-	            height="0.9em"
-	            fill="#fff"
-	            version="1.1"
-	            id="Layer_1"
-	            xmlns="http://www.w3.org/2000/svg"
-	            xmlns:xlink="http://www.w3.org/1999/xlink"
-	            viewBox="-143 145 512 512"
-	            xml:space="preserve"
-	        >
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline" id="linkedin" href="https://www.linkedin.com/in/kostas-k-8841961a2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+		  <svg class="footer-icon-svg" width="0.9em" height="0.9em" fill="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve">
             <g>
-              <path
-	                    d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7
+              <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7
 			c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4
 			c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8
 			c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4
-			c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"
-	                />
-              <rect x="-8.5" y="348.4" width="49.9" height="159.7" />
-              <path
-	                    d="M15.4,273c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7
-			C45.1,284.9,33.8,273,15.4,273z"
-	                />
-              <path
-	                    d="M177.7,346.9c-28.6,0-46.5,15.6-49.8,26.6v-25.1H71.8c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1
-			c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4v82.6H241v-88.8C241,369.9,213.2,346.9,177.7,346.9z"
-	                />
+			c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"></path>
+              <rect x="-8.5" y="348.4" width="49.9" height="159.7"></rect>
+              <path d="M15.4,273c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7
+			C45.1,284.9,33.8,273,15.4,273z"></path>
+              <path d="M177.7,346.9c-28.6,0-46.5,15.6-49.8,26.6v-25.1H71.8c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1
+			c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4v82.6H241v-88.8C241,369.9,213.2,346.9,177.7,346.9z"></path>
             </g>
           </svg>
 		</a>
-		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
-		  id="e-mail" href="mailto:kostaskonstantakis6@gmail.com" aria-label="Send email">
-		  <svg
-	            class="footer-icon-svg"
-	            width="0.9em"
-	            height="0.9em"
-	            viewBox="0 0 24 24"
-	            fill="none"
-	            xmlns="http://www.w3.org/2000/svg"
-	        >
-            <path
-	                fill-rule="evenodd"
-	                clip-rule="evenodd"
-	                d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
-	                fill="#080341"
-	            />
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline" id="e-mail" href="mailto:kostaskonstantakis6@gmail.com" aria-label="Send email">
+		  <svg class="footer-icon-svg" width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill="#080341"></path>
           </svg>
         </a>
-        <a
-	        class="footer-link"
-	        id="bitbucket"
-	        href="https://bitbucket.org/projects_26/workspace/repositories"
-	        target="_blank"
-	        rel="noopener noreferrer"
-	        aria-label="Bitbucket profile"
-	    >
-          <svg
-	            class="footer-icon-svg"
-	            width="0.9em"
-	            height="0.9em"
-	            xmlns="http://www.w3.org/2000/svg"
-	            xml:space="preserve"
-	            viewBox="0 25.8 511.9 460.3"
-	        >
-            <path d="M202.5 330.9h106.9l25.8-150.6H174.1z" style="fill: none" />
-            <path
-	                d="M16.6 25.8C7.6 25.7.1 32.9 0 42c0 1 .1 1.9.2 2.8l69.6 422.7c1.8 10.7 11 18.5 21.8 18.6h334.1c8.1.1 15.1-5.8 16.4-13.8l69.6-427.5c1.4-8.9-4.6-17.4-13.6-18.8-.9-.2-1.9-.2-2.8-.2zm293.2 305.5H203.2l-28.9-150.8h161.3z"
-	                style="fill: #fff"
-	            />
-            <linearGradient
-	                id="a"
-	                x1="-703.576"
-	                x2="-703.703"
-	                y1="796.173"
-	                y2="796.039"
-	                gradientTransform="matrix(1996.6343 0 0 -1480.3047 1405309.125 1178801.625)"
-	                gradientUnits="userSpaceOnUse"
-	            >
-              <stop offset=".18" style="stop-color: #fff" />
-              <stop offset="1" style="stop-color: #fff" />
-            </linearGradient>
-            <path
-	                d="M489.2 180.3H335.4L309.6 331H203L77.2 480.3c4 3.4 9.1 5.4 14.3 5.4h333.9c8.1.1 15.1-5.8 16.4-13.8z"
-	                style="fill: url(#a)"
-	            />
-          </svg>
-		</a>
-		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline"
-		  id="bitbucket" href="https://bitbucket.org/projects_26/workspace/repositories" target="_blank" rel="noopener noreferrer" aria-label="Bitbucket profile"> <!-- class="w-[1em] h-[1em]" -->
-          <svg aria-hidden="true" class="w-[1em] h-[1em]" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 25.8 511.9 460.3"><path d="M202.5 330.9h106.9l25.8-150.6H174.1z" style="fill:none"/><path d="M16.6 25.8C7.6 25.7.1 32.9 0 42c0 1 .1 1.9.2 2.8l69.6 422.7c1.8 10.7 11 18.5 21.8 18.6h334.1c8.1.1 15.1-5.8 16.4-13.8l69.6-427.5c1.4-8.9-4.6-17.4-13.6-18.8-.9-.2-1.9-.2-2.8-.2zm293.2 305.5H203.2l-28.9-150.8h161.3z" style="fill:#fff"/><linearGradient id="a" x1="-703.576" x2="-703.703" y1="796.173" y2="796.039" gradientTransform="matrix(1996.6343 0 0 -1480.3047 1405309.125 1178801.625)" gradientUnits="userSpaceOnUse"><stop offset=".18" style="stop-color:#fff"/><stop offset="1" style="stop-color:#fff"/></linearGradient><path d="M489.2 180.3H335.4L309.6 331H203L77.2 480.3c4 3.4 9.1 5.4 14.3 5.4h333.9c8.1.1 15.1-5.8 16.4-13.8z" style="fill:url(#a)"/></svg>
+        
+		<a class="footer-link inline-flex items-center justify-center w-6 h-6 rounded-full border border-transparent text-[var(--color-footer-text)] no-underline hover:text-[var(--color-accent-light)] hover:border-[var(--color-accent-light)] focus-visible:text-[var(--color-footer-text)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-footer-text)] focus-visible:outline-offset-[3px] focus-visible:underline" id="bitbucket" href="https://bitbucket.org/projects_26/workspace/repositories" target="_blank" rel="noopener noreferrer" aria-label="Bitbucket profile"> <!-- class="w-[1em] h-[1em]" -->
+          <svg aria-hidden="true" class="w-[1em] h-[1em]" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 25.8 511.9 460.3"><path d="M202.5 330.9h106.9l25.8-150.6H174.1z" style="fill:none"></path><path d="M16.6 25.8C7.6 25.7.1 32.9 0 42c0 1 .1 1.9.2 2.8l69.6 422.7c1.8 10.7 11 18.5 21.8 18.6h334.1c8.1.1 15.1-5.8 16.4-13.8l69.6-427.5c1.4-8.9-4.6-17.4-13.6-18.8-.9-.2-1.9-.2-2.8-.2zm293.2 305.5H203.2l-28.9-150.8h161.3z" style="fill:#fff"></path><linearGradient id="a" x1="-703.576" x2="-703.703" y1="796.173" y2="796.039" gradientTransform="matrix(1996.6343 0 0 -1480.3047 1405309.125 1178801.625)" gradientUnits="userSpaceOnUse"><stop offset=".18" style="stop-color:#fff"></stop><stop offset="1" style="stop-color:#fff"></stop></linearGradient><path d="M489.2 180.3H335.4L309.6 331H203L77.2 480.3c4 3.4 9.1 5.4 14.3 5.4h333.9c8.1.1 15.1-5.8 16.4-13.8z" style="fill:url(#a)"></path></svg>
         </a>
 	  </nav>
-	  <div class="disclaimer text-center px-4">
-		<strong><i>Disclaimer:<br>That's a mere, simple demo website, made just for fun! It's not intended to be used as a real, commercial website.<br>I'm in no way, shape or form affiliated with any of the brands displayed or mentioned in this website.</i></strong>
-	  </div>
+	  <div class="disclaimer text-center px-4"><strong><i>Disclaimer:<br>That's a mere, simple demo website, made just for fun! It's not intended to be used as a real, commercial website.<br>I'm in no way, shape or form affiliated with any of the brands displayed or mentioned in this website.</i></strong></div>
 	</footer>
   
 	<script src="js/data.js"></script>
@@ -264,5 +157,6 @@
 	<script src="js/index.js"></script>
 	<script src="js/features.js"></script>
 	<script src="js/audio.js"></script>
-  </body>
-</html>
+  
+
+</body></html>
