@@ -806,6 +806,7 @@
   display: flex !important;
   flex-direction: column;
   flex: 1;
+  position: relative;
 }
 .guitars-section.orientation-slideshow .splide__slide {
   display: flex;
@@ -835,12 +836,14 @@
   padding: 0 1rem;
   box-sizing: border-box;
   pointer-events: none;
+  z-index: 20 !important;
 }
 .guitars-section.orientation-slideshow .splide__arrow {
   pointer-events: auto;
   position: relative;
   top: 0 !important;
   transform: none !important;
+  z-index: 21 !important;
   background-color: rgba(0, 0, 0, 0.4) !important;
   color: white;
   border: none;

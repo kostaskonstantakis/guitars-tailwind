@@ -187,6 +187,7 @@ function updateYearAndAge() {
 
 	function initSplide() {
 		destroySplide();
+		section.classList.add('orientation-slideshow');
 		
 		// store original HTML if not already done
 		if (!originalHTML) {
