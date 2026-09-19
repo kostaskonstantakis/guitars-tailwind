@@ -1,6 +1,3 @@
-// Guitar Collection Audio - Background Music + Hover Melodies
-// Χρησιμοποιεί Web Audio API για αρπέτα background + hover συχνότητες
-
 (function() {
     'use strict';
 

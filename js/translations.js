@@ -1,4 +1,3 @@
-// Translations for the guitar collection website
 window.translations = {
     en: {
         page_title: "Kostas' Guitars – My guitar collection",
@@ -74,7 +73,7 @@ window.translations = {
         ]
     },
     el: {
-        page_title: "Οι κιθάρες του Κώστα – Η συλλογή μου",
+        page_title: "Οι κιθάρες του Κώστα",
         header_text: "Απολαύστε τη συλλογή κιθαρών του Κώστα!",
         footer_text: "Κώστας Κωνσταντάκης &#169; <span id=\"year\"></span>",
         synopsis: "Γειά σε όλους! Με λένε Κώστα.<br>Καλώς ήρθατε σε μια demo ιστοσελίδα για τη συλλογή κιθαρών μου.<br>Παίζω κιθάρα για πάνω από 15 χρόνια, από τον Σεπτέμβριο του 2009.<br>Ουσιαστικά, περισσότερο από το μισό της ζωής μου, δεδομένου ότι είμαι <span id=\"age\" aria-live=\"polite\"></span> ετών.<br>Και εσείς; Παίζετε κιθάρα κι εσείς;<br>Έλα! Ας παίξουμε μαζί!",

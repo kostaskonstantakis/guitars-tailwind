@@ -1,4 +1,3 @@
-// render guitar sections from data.js
 var currentLang = 'en';
 var guitarSections = [];
 var applyOrientation = function() {};
