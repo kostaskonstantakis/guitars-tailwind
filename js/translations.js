@@ -69,6 +69,10 @@ window.translations = {
             {
                 description: "Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing some different music styles!",
                 alt: "Mahalo Purple Ukulele. A fun addition to my collection for relaxing and playing."
+            },
+            {
+                description: "Cort guitar. A new addition to my collection.",
+                alt: "Cort guitar. A new addition to my collection."
             }
         ]
     },
@@ -142,6 +146,10 @@ window.translations = {
             {
                 description: "Mahalo Purple Ukulele. Μια διασκεδαστική προσθήκη στη συλλογή μου για χαλάρωση και παιχνίδι διαφόρων στυλ μουσικής!",
                 alt: "Mahalo Purple Ukulele. Μια διασκεδαστική προσθήκη στη συλλογή μου για χαλάρωση."
+            },
+            {
+                description: "Κιθάρα Cort. Μια νέα προσθήκη στη συλλογή μου.",
+                alt: "Κιθάρα Cort. Μια νέα προσθήκη στη συλλογή μου."
             }
         ]
     },
@@ -213,6 +221,10 @@ window.translations = {
             {
                 description: "Mahalo Purple Ukulele. Весёлое дополнение к моей коллекции для расслабления и игры различных музыкальных стилей!",
                 alt: "Mahalo Purple Ukulele. Весёлое дополнение к моей коллекции для расслабления."
+            },
+            {
+                description: "Гитара Cort. Новое дополнение к моей коллекции.",
+                alt: "Гитара Cort. Новое дополнение к моей коллекции."
             }
         ]
     }

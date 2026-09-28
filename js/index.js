@@ -16,7 +16,8 @@ var applyTypeFilter = function() {};
   'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 ' +
   'h-[600px] w-[400px]'; // h-[533px] 
                 div.tabIndex = 0;
-                div.setAttribute('role','group');
+				div.setAttribute('role','button');
+				div.setAttribute('aria-keyshortcuts', 'Enter Space');
                 div.dataset.type = g.type;
                 var trans = window.translations[currentLang].guitars[g.index];
                 div.dataset.description = trans.description;
@@ -54,6 +55,7 @@ var applyTypeFilter = function() {};
     if (langFilter) {
         function updateLanguage() {
             currentLang = langFilter.value;
+			document.documentElement.lang = currentLang;
             // Update page title
             if (document.getElementById('page-title')) {
                 document.getElementById('page-title').textContent = window.translations[currentLang].page_title;
@@ -437,6 +439,13 @@ function updateYearAndAge() {
 				if (el !== guitarSection) el.classList.remove('active');
 			});
 			openLightbox(img.src, guitarSection.getAttribute('data-description') || img.alt);
+		});
+		section.addEventListener('keydown', function (e) {
+			if (e.key !== 'Enter' && e.key !== ' ') return;
+			var guitarSection = e.target.closest('.guitar-section');
+			if (!guitarSection) return;
+			e.preventDefault();
+			guitarSection.click();
 		});
 	}
 	

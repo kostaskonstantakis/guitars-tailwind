@@ -161,7 +161,3 @@
 .guitars-section.orientation-horizontal .guitar-section img {
    @apply w-[400px] h-[220px] object-contain transform-none;
 }
-
-[data-theme="dark"] body {
-  opacity: 0.5;
-}

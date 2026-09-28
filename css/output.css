@@ -908,9 +908,6 @@
   transform: none;
   object-fit: cover;
 }
-[data-theme="dark"] body {
-  opacity: 0.5;
-}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

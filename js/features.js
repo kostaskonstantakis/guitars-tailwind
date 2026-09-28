@@ -76,6 +76,11 @@
 		if (window.applyTypeFilter) {
 			window.applyTypeFilter();
 		}
+
+		const resultsStatus = document.getElementById('results-status');
+		if (resultsStatus) {
+			resultsStatus.textContent = filtered.length + ' guitars shown';
+		}
 	}
 
 	if (searchInput) {
@@ -202,9 +207,7 @@
 		const isLightboxOpen = lightbox && !lightbox.hidden;
 
 		if (e.key === 'Escape' && isLightboxOpen) {
-			// Close lightbox
-			lightbox.hidden = true;
-			document.body.style.overflow = '';
+			return;
 		} else if (e.key === 'ArrowLeft') {
 			const gallery = document.getElementById('guitars-section');
 			if (gallery && gallery.classList.contains('orientation-slideshow')) {

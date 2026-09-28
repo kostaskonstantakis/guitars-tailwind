@@ -6,6 +6,7 @@
     var backgroundOscillator = null;
     var backgroundGain = null;
     var isBackgroundPlaying = false;
+	var audioToggle = document.getElementById('audio-toggle');
 
     // Note frequencies (A4 = 440Hz)
     var noteFrequencies = {
@@ -85,6 +86,7 @@
 
     // Hover Sound (κάθε κιθάρα παίζει ένα διαφορετικό note)
     function playHoverNote(guitarIndex) {
+        if (!isBackgroundPlaying) return;
         initAudioContext();
 
         var note = hoverNotes[guitarIndex % hoverNotes.length];
@@ -119,14 +121,24 @@
         isPlaying: function() { return isBackgroundPlaying; }
     };
 
-    // Auto-start background on page load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            startBackgroundArpeggio();
-        });
-    } else {
-        startBackgroundArpeggio();
+    function updateAudioToggle() {
+        if (!audioToggle) return;
+        audioToggle.textContent = isBackgroundPlaying ? '🔊' : '🔇';
+        audioToggle.setAttribute('aria-pressed', isBackgroundPlaying ? 'true' : 'false');
+        audioToggle.setAttribute('aria-label', isBackgroundPlaying ? 'Stop background music' : 'Play background music');
     }
+
+    if (audioToggle) {
+        audioToggle.addEventListener('click', function() {
+            if (isBackgroundPlaying) {
+                stopBackgroundArpeggio();
+            } else {
+                startBackgroundArpeggio();
+            }
+            updateAudioToggle();
+        });
+    }
+    updateAudioToggle();
 
     // Stop on page unload
     window.addEventListener('beforeunload', function() {

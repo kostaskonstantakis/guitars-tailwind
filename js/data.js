@@ -48,5 +48,10 @@ window.guitarData = [
         type: "ukulele",
         img: "css/media/mahalo_ukulele_purple.png",
         index: 9
-    }
+    },
+    {
+        type: "electric",
+        img: "css/media/cort.png",
+        index: 10
+    },
 ];
