@@ -14,7 +14,7 @@ var applyTypeFilter = function() {};
                 var div = document.createElement('div');
                 div.className = 'guitar-section relative inline-block m-[10px] overflow-hidden outline-none contain-layout ' +
   'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[var(--color-outline)] focus-visible:outline-offset-2 ' +
-  'h-[600px] w-[400px]'; // h-[533px] 
+  'h-[600px] w-auto max-w-[400px]'; // h-[533px]
                 div.tabIndex = 0;
 				div.setAttribute('role','button');
 				div.setAttribute('aria-keyshortcuts', 'Enter Space');
