@@ -882,28 +882,26 @@
   }
 }
 .guitars-section.orientation-horizontal .guitar-section {
-  display: grid;
-  height: 220px;
-  width: 400px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  @media (width >= 40rem) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  @media (width >= 48rem) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  @media (width >= 64rem) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  display: block;
+  width: calc(100% - 10px);
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 20 / 11;
+  margin: 5px;
 }
 .guitars-section.orientation-horizontal .guitar-section img {
-  height: 220px;
-  width: 400px;
-  transform: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 182%;
   object-fit: contain;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center;
+}
+.lightbox.orientation-horizontal .lightbox__img {
+  max-width: 75vh;
+  max-height: 90vw;
 }
 @property --tw-translate-x {
   syntax: "*";

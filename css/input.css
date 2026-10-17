@@ -156,8 +156,25 @@
 }
 
 .guitars-section.orientation-horizontal .guitar-section {
-  @apply grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[5px] w-[400px] h-[220px] items-center justify-center;
+  display: block;
+  width: calc(100% - 10px);
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 20 / 11;
+  margin: 5px;
 }
 .guitars-section.orientation-horizontal .guitar-section img {
-   @apply w-[400px] h-[220px] object-contain transform-none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 182%;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center;
+}
+
+.lightbox.orientation-horizontal .lightbox__img {
+  max-width: 75vh;
+  max-height: 90vw;
 }
