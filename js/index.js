@@ -19,7 +19,8 @@ var applyTypeFilter = function() {};
 				div.setAttribute('role','button');
 				div.setAttribute('aria-keyshortcuts', 'Enter Space');
                 div.dataset.type = g.type;
-                var trans = window.translations[currentLang].guitars[g.index];
+				div.dataset.status = g.status || 'current';
+				var trans = window.translations[currentLang].guitars[g.index];
                 div.dataset.description = trans.description;
                 div.setAttribute('aria-label', trans.description);
 
@@ -81,6 +82,10 @@ var applyTypeFilter = function() {};
             if (typeLabel) {
                 typeLabel.innerHTML = '<strong>' + window.translations[currentLang].type_label + '</strong>';
             }
+            var collectionLabel = document.querySelector('label[for="collection-filter"]');
+            if (collectionLabel) {
+                collectionLabel.innerHTML = '<strong>' + window.translations[currentLang].collection_label + '</strong>';
+            }
             // Update options
             var orientationSelect = document.getElementById('orientation-filter');
             if (orientationSelect) {
@@ -96,6 +101,15 @@ var applyTypeFilter = function() {};
                 for (var i = 0; i < opts.length; i++) {
                     var val = opts[i].value;
                     opts[i].textContent = window.translations[currentLang].type_options[val];
+                }
+            }
+            var collectionSelect = document.getElementById('collection-filter');
+            if (collectionSelect) {
+                collectionSelect.setAttribute('aria-label', window.translations[currentLang].collection_aria_label);
+                var opts = collectionSelect.options;
+                for (var i = 0; i < opts.length; i++) {
+                    var val = opts[i].value;
+                    opts[i].textContent = window.translations[currentLang].collection_options[val];
                 }
             }
             // Update disclaimer
@@ -132,8 +146,8 @@ var applyTypeFilter = function() {};
             // Re-render guitars
             window.renderGuitars();
             // Re-apply filters
-            applyOrientation();
             applyTypeFilter();
+            applyOrientation();
             // Save to localStorage
             try { localStorage.setItem('guitar-language', currentLang); } catch (e) {}
         }
@@ -190,8 +204,7 @@ function updateYearAndAge() {
 		destroySplide();
 		section.classList.add('orientation-slideshow');
 		
-		// store original HTML if not already done
-		if (!originalHTML) {
+		if (section.querySelector('.guitar-section')) {
 			originalHTML = section.innerHTML;
 		}
 		
@@ -291,21 +304,17 @@ function updateYearAndAge() {
 		if (originalHTML) {
 			section.innerHTML = originalHTML;
 			section.classList.remove('splide');
+			guitarSections = Array.prototype.slice.call(section.querySelectorAll('.guitar-section'));
 		}
 	}
 
 	applyOrientation = function() {
 		var value = filter.value;
-		var typeFilterControl = document.querySelector('.type-filter-control');
 		
 		if (value === 'slideshow') {
 			initSplide();
 			section.classList.remove('orientation-vertical', 'orientation-horizontal');
 			section.classList.add('orientation-slideshow');
-			// hide type filter in slideshow
-			if (typeFilterControl) {
-				typeFilterControl.style.display = 'none';
-			}
 		} else {
 			if (section.classList.contains('orientation-slideshow')) {
 				restoreGrid();
@@ -317,13 +326,11 @@ function updateYearAndAge() {
 			section.classList.remove('orientation-slideshow');
 			section.classList.remove('orientation-horizontal', 'orientation-vertical');
 			section.classList.add('orientation-' + value);
-			// show type filter in grid modes
-			if (typeFilterControl) {
-				typeFilterControl.style.display = '';
-			}
 		}
 		try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
 	};
+
+	window.restoreGuitarGrid = restoreGrid;
 
 	try {
 		var saved = localStorage.getItem(STORAGE_KEY);
@@ -331,26 +338,43 @@ function updateYearAndAge() {
 			filter.value = saved;
 		}
 	} catch (e) {}
-	applyOrientation();
 	filter.addEventListener('change', applyOrientation);
 })();
 
-/* Φίλτρο τύπου (electric / bass / acoustic) */
+/* Collection and instrument type filters */
 (function () {
-	var filter = document.getElementById('type-filter');
-	if (!filter) return;
+	var collectionFilter = document.getElementById('collection-filter');
+	var typeFilter = document.getElementById('type-filter');
+	var section = document.getElementById('guitars-section');
+	if (!typeFilter || !collectionFilter || !section) return;
 
 	applyTypeFilter = function() {
-		var value = filter.value;
+		var collectionValue = collectionFilter.value;
+		var typeValue = typeFilter.value;
+		var isSlideshow = document.getElementById('orientation-filter').value === 'slideshow';
+		if (isSlideshow && !section.querySelector('.guitar-section') && window.restoreGuitarGrid) {
+			window.restoreGuitarGrid();
+		}
 		guitarSections.forEach(function (el) {
 			var typeAttr = el.getAttribute('data-type') || '';
 			var types = typeAttr.split(/\s+/).filter(Boolean);
-			var match = value === 'all' || types.indexOf(value) !== -1;
+			var status = el.getAttribute('data-status') || 'current';
+			var matchesCollection = collectionValue === 'all' || status === collectionValue;
+			var matchesType = typeValue === 'all' || types.indexOf(typeValue) !== -1;
+			var match = matchesCollection && matchesType;
+			el.hidden = !match;
 			el.classList.toggle('type-hidden', !match);
 		});
+		if (isSlideshow) {
+			applyOrientation();
+		}
 	};
-	filter.addEventListener('change', applyTypeFilter);
+	collectionFilter.addEventListener('change', applyTypeFilter);
+	typeFilter.addEventListener('change', applyTypeFilter);
 	applyTypeFilter();
+	if (document.getElementById('orientation-filter').value !== 'slideshow') {
+		applyOrientation();
+	}
 })();
 
 /* Lightbox: κλικ σε εικόνα κιθάρας για μεγέθυνση */
